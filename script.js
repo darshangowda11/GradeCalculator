@@ -1,21 +1,48 @@
 
-function calculate() {
+const engInput = document.getElementById('eng');
+const matInput = document.getElementById('mat');
+const phyInput = document.getElementById('phy');
+const chmInput = document.getElementById('chm');
+const comInput = document.getElementById('com');
+const calcButton = document.querySelector('.btn');
 
-    //alert("darsh")
-    const english = document.getElementById("English").value
-    const maths = document.getElementById("Maths").value
-    const physics = document.getElementById("Physics").value
-    const chemistry = document.getElementById("Chemistry").value
-    const computer = document.getElementById("Computer").value
-    //console.log(english)
-    if (isNaN(english) || isNaN(maths) || isNaN(physics) || isNaN(chemistry) || isNaN(computer) ||
-        english < 0 || english > 100 || maths < 0 || maths > 100 || physics < 0 || physics > 100 || chemistry < 0 || chemistry > 100 || computer < 0 || computer > 100) {
-        alert("please enter marks in range of 100")
-        return;
-    }
 
+const totalOutput = document.getElementById('total');
+const aveOutput = document.getElementById('ave');
+const gradeOutput = document.getElementById('grade');
+
+
+function calculateGrade() {
+  const engValue = parseFloat(engInput.value);
+  const matValue = parseFloat(matInput.value);
+  const phyValue = parseFloat(phyInput.value);
+  const chmValue = parseFloat(chmInput.value);
+  const comValue = parseFloat(comInput.value);
+
+ 
+  const total = engValue + matValue + phyValue + chmValue + comValue;
+  const ave = total / 5;
+
+  let grade;
+  if (ave >= 90) {
+    grade = 'A+';
+  } else if (ave >= 80) {
+    grade = 'A';
+  } else if (ave >= 70) {
+    grade = 'B';
+  } else if (ave >= 60) {
+    grade = 'C';
+  } else if (ave >= 50) {
+    grade = 'D';
+  } else {
+    grade = 'Failed';
+  }
+
+
+  totalOutput.textContent = total.toFixed(2);
+  aveOutput.textContent = ave.toFixed(2);
+  gradeOutput.textContent = grade;
 }
-let totalScore = english + maths + physics + chemistry + computer;
-let averageScore= totalscore/5
-let totalPossiblePoint=500;
-let grade= (totalScore/totalPossiblePoint)*100
+
+
+calcButton.addEventListener('click', calculateGrade);

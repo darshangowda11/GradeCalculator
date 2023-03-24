@@ -1,48 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grade_calculator</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="main-container">
-      <h1 class="heading">Grading System assignment</h1>
-      <div class="container">
-        <div class="left-class">
-          <div class="subjects">
-            <div class="allsubject">
-              <label for="English">English :</label>
-              <input type="number" placeholder="" id="English" min="0"max="100" />
-            </div>
-            <div class="allsubject">
-              <label for="Maths">Maths:</label>
-              <input type="number" placeholder="" id="Maths" min="0"max="100" />
-            </div>
-            <div class="allsubject">
-              <label for="Physics">Physics:</label>
-              <input type="number" placeholder="" id="Physics" min="0"max="100" />
-            </div>
-            <div class="allsubject">
-              <label for="Chemistry">Chemistry:</label>
-              <input type="number" placeholder="" id="Chemistry" min="0"max="100" />
-            </div>
-            <div class="allsubject">
-              <label for="Computer">Computer:</label>
-              <input type="number" placeholder="" id="Computer" min="0"max="100" />
-            </div>
-            <button onclick="calculate()">Calculate</button>
-          </div>
-        </div>
-        <div class="right-class">
-          <h1>Total</h1>
-          <h1>Average</h1>
-          <h1>Grade</h1>
-        </div>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="heading"><h1>GRADING SYSTEM ASSIGNMENT</h1></div>
+    <div id= "main">
+         <div id="head"><h2>Grading System In JS</h2></div>
+            <label for="input_name">English</label><input type="text" id="eng" name="input_name"><br>
+            <label for="input_name">Maths</label><input type="text" id="mat" name="input_name"><br>
+            <label for="input_name">Physics</label><input type="text" id="phy" name="input_name"><br>
+            <label for="input_name">Chemistry</label><input type="text" id="chm" name="input_name"><br>
+            <label for="input_name">Computer</label><input type="text" id="com" name="input_name"><br>
+            <button type="submit" class="btn">Calculate Grade</button>
+    </div> 
+        
+    <div id ="result">
+        <div id="head1"><h2>Total</h2></div>
+        <div id="total"></div>
+        <div id="head2"><h2>Average</h2></div>
+        <div id="ave"></div>
+        <div id="head3"><h2>Grade</h2></div>
+        <div id="grade"></div>
     </div>
-    <script src="script.js" defer></script>
-  </body>
+    <script src="script.js"></script>
+    </div>
+</body>
 </html>
